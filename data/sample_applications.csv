@@ -1,0 +1,6 @@
+application_id,parent_name,learner_name,grade,school_name,district,home_distance_km,status
+1,Nomsa Mokoena,Lerato Mokoena,Grade 1,Mahlasedi Masana Primary School,Tshwane East,3.2,ELIGIBLE
+2,Thandi Nkosi,Amo Nkosi,Grade 1,Mamelodi Primary School,Tshwane East,4.8,UNDER_OFFER
+3,Karabo Dlamini,Neo Dlamini,Grade 1,Mahlasedi Masana Primary School,Tshwane East,6.1,OUTSIDE_RADIUS
+4,Ayanda Khumalo,Sipho Khumalo,Grade 1,Phomolong Primary School,Tshwane East,2.9,ACCEPTED
+5,Zanele Mthembu,Lina Mthembu,Grade 1,Mamelodi Primary School,Tshwane East,5.4,WAITLISTED
