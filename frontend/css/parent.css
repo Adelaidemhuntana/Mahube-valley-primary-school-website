@@ -1,0 +1,78 @@
+
+.application-form {
+    display: grid;
+    gap: 14px;
+}
+
+.application-form label {
+    display: grid;
+    gap: 7px;
+    font-weight: 700;
+    color: #10233f;
+}
+
+.application-form input,
+.application-form select {
+    border: 1px solid #d9e1ef;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+    background: #fbfcff;
+}
+
+.button-link {
+    text-decoration: none;
+    border: 1px solid #d9e1ef;
+    background: white;
+    border-radius: 9px;
+    padding: 12px 18px;
+    font-weight: 700;
+    color: #10233f;
+}
+
+.result-card,
+.info-box,
+.success-box,
+.warning-box {
+    border: 1px solid #dbe3f0;
+    border-radius: 16px;
+    padding: 18px;
+    background: #fbfcff;
+    margin-bottom: 16px;
+}
+
+.success-box {
+    background: #f0fff6;
+    border-color: #bce9cd;
+}
+
+.warning-box {
+    background: #fff8ee;
+    border-color: #ffdca8;
+}
+
+.journey {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr 25px);
+    align-items: center;
+    gap: 8px;
+}
+
+.journey div {
+    border: 1px solid #dbe3f0;
+    border-radius: 14px;
+    padding: 16px;
+    background: #fbfcff;
+    font-weight: 700;
+    text-align: center;
+}
+
+.journey span {
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.journey span:last-child {
+    display: none;
+}

@@ -42,9 +42,14 @@ def get_connection():
 
 @app.get("/")
 def home_page():
-    # This opens the visual dashboard.
-    # It lets the demo start on the product interface instead of Swagger.
-    return FileResponse(FRONTEND_PATH / "index.html")
+    # Open the Executive Dashboard page.
+    return FileResponse(FRONTEND_PATH / "pages" / "index.html")
+
+
+@app.get("/parent")
+def parent_page():
+    # Open the Parent Portal page.
+    return FileResponse(FRONTEND_PATH / "pages" / "parent.html")
 
 
 app.mount("/frontend", StaticFiles(directory="frontend"), name="frontend")

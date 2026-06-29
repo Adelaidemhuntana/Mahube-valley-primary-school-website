@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parent Portal | Smart School Placement Hub</title>
+    <link rel="stylesheet" href="/frontend/css/global.css">
+    <link rel="stylesheet" href="/frontend/css/parent.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h1>Smart School<br>Placement Hub</h1>
+        <a href="/">Executive Dashboard</a>
+        <a href="/parent" class="active">Parent Portal</a>
+        <a href="/#capacity">School Capacity</a>
+        <a href="/#offer">Offer Management</a>
+        <a href="/#district">District Dashboard</a>
+        <a href="/#forecast">AI Forecasting</a>
+        <a href="/#pipeline">Data Pipeline</a>
+        <div class="profile">Adelaide Montana<br><span>Founder and Lead Architect</span></div>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <h2>Parent Application Portal</h2>
+                <p>Apply for a school seat and receive a placement offer when eligible</p>
+            </div>
+            <a class="button-link" href="/">Back to Dashboard</a>
+        </header>
+
+        <section class="card split">
+            <div>
+                <h3>Submit Grade 1 Application</h3>
+                <form id="applicationForm" class="application-form">
+                    <label>Parent Full Name
+                        <input type="text" id="parentName" value="Nomsa Mokoena">
+                    </label>
+
+                    <label>Learner Full Name
+                        <input type="text" id="learnerName" value="Lerato Mokoena">
+                    </label>
+
+                    <label>Grade
+                        <select id="grade">
+                            <option>Grade 1</option>
+                            <option>Grade 8</option>
+                        </select>
+                    </label>
+
+                    <label>Preferred School
+                        <select id="schoolId">
+                            <option value="1">Mahlasedi Masana Primary School</option>
+                            <option value="2">Mamelodi Primary School</option>
+                            <option value="3">Phomolong Primary School</option>
+                        </select>
+                    </label>
+
+                    <label>Distance From School in KM
+                        <input type="number" step="0.1" id="distance" value="3.2">
+                    </label>
+
+                    <label>Birth Certificate Upload
+                        <input type="file">
+                    </label>
+
+                    <label>Proof of Address Upload
+                        <input type="file">
+                    </label>
+
+                    <button type="submit" class="accept">Submit Application</button>
+                </form>
+            </div>
+
+            <div>
+                <h3>Application Result</h3>
+                <div id="applicationResult" class="result-card">
+                    <p>Submit the form to see whether the learner is eligible.</p>
+                </div>
+
+                <div class="info-box">
+                    <h4>How the rule works</h4>
+                    <p>If the learner is within 5 km and the school has seats, the system creates a five day offer.</p>
+                    <p>The seat moves from available to under offer.</p>
+                    <p>When the parent accepts, the seat moves to taken.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3>Parent Journey</h3>
+            <div class="journey">
+                <div>1. Apply</div>
+                <span>→</span>
+                <div>2. Validate 5 km Rule</div>
+                <span>→</span>
+                <div>3. Check Capacity</div>
+                <span>→</span>
+                <div>4. Create Offer</div>
+                <span>→</span>
+                <div>5. Parent Accepts</div>
+                <span>→</span>
+                <div>6. Seat Confirmed</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/frontend/js/parent.js"></script>
+</body>
+</html>
