@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart School Placement Hub</title>
+    <link rel="stylesheet" href="/frontend/styles.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h1>Smart School<br>Placement Hub</h1>
+        <a class="active">Executive Dashboard</a>
+        <a>Parent Portal</a>
+        <a>School Capacity</a>
+        <a>Offer Management</a>
+        <a>District Dashboard</a>
+        <a>AI Forecasting</a>
+        <a>Data Pipeline</a>
+        <div class="profile">Adelaide Montana<br><span>Founder and Lead Architect</span></div>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <h2>Smart School Placement Data Platform</h2>
+                <p>Real time school capacity planning, admissions analytics and learner placement</p>
+            </div>
+            <button onclick="loadDashboard()">Refresh</button>
+        </header>
+
+        <section class="card">
+            <h3>1. Executive Dashboard</h3>
+            <div class="kpis">
+                <div><span>Total Applications</span><strong id="totalApplications">45,128</strong></div>
+                <div><span>Total Schools</span><strong id="totalSchools">0</strong></div>
+                <div><span>Grade 1 Capacity</span><strong id="gradeCapacity">0</strong></div>
+                <div><span>Available Seats</span><strong class="green" id="availableSeats">0</strong></div>
+                <div><span>Under Offer</span><strong class="orange" id="underOffer">0</strong></div>
+                <div><span>Taken</span><strong class="purple" id="takenSeats">0</strong></div>
+                <div><span>Unplaced</span><strong class="red" id="unplacedLearners">243</strong></div>
+            </div>
+
+            <div class="grid">
+                <div class="panel wide">
+                    <h4>Applications Over Time</h4>
+                    <div class="chart-line"></div>
+                </div>
+                <div class="panel">
+                    <h4>Schools Near Full Capacity</h4>
+                    <p>Mamelodi West PS <b>98%</b></p>
+                    <p>Soshanguve East PS <b>97%</b></p>
+                    <p>Protea Glen PS <b>95%</b></p>
+                    <p>Phomolong PS <b>90%</b></p>
+                </div>
+                <div class="panel">
+                    <h4>Unplaced Learners by District</h4>
+                    <div class="donut"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card split">
+            <div>
+                <h3>2. School Capacity. Ticket Style View</h3>
+                <div class="school-heading">
+                    <div>
+                        <h2>Mahlasedi Masana Primary School</h2>
+                        <p>3.2 km from home. Eligible under 5 km rule</p>
+                    </div>
+                    <span>Open</span>
+                </div>
+
+                <div class="mini-kpis">
+                    <div>Total Capacity <strong>1,200</strong></div>
+                    <div>Grade 1 Capacity <strong>120</strong></div>
+                    <div>Available <strong class="green" id="seatAvailable">18</strong></div>
+                    <div>Under Offer <strong class="orange" id="seatOffer">12</strong></div>
+                    <div>Taken <strong class="red" id="seatTaken">90</strong></div>
+                </div>
+
+                <div class="classes">
+                    <div id="classA" class="class-card"></div>
+                    <div id="classB" class="class-card"></div>
+                    <div id="classC" class="class-card"></div>
+                    <div id="classD" class="class-card"></div>
+                </div>
+            </div>
+
+            <div>
+                <h3>3. Offer Management</h3>
+                <div class="offer">
+                    <h2>Mahlasedi Masana Primary School</h2>
+                    <p>Grade 1. 2026 Academic Year</p>
+                    <div class="countdown">
+                        <div><strong>04</strong><span>Days</span></div>
+                        <div><strong>22</strong><span>Hours</span></div>
+                        <div><strong>15</strong><span>Minutes</span></div>
+                    </div>
+                    <button class="accept" onclick="acceptOffer()">Accept Offer</button>
+                    <button class="decline">Decline Offer</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="card split">
+            <div>
+                <h3>4. District Dashboard</h3>
+                <div class="mini-kpis">
+                    <div>Total Schools <strong>320</strong></div>
+                    <div>Total Capacity <strong>24,500</strong></div>
+                    <div>Available <strong class="green">2,450</strong></div>
+                    <div>Unplaced <strong class="red">243</strong></div>
+                </div>
+                <div class="map"></div>
+            </div>
+            <div>
+                <h3>5. AI Forecasting and Planning</h3>
+                <div class="mini-kpis">
+                    <div>Demand <strong>15,230</strong></div>
+                    <div>Capacity <strong class="green">13,900</strong></div>
+                    <div>Shortage <strong class="red">1,330</strong></div>
+                </div>
+                <p class="recommendation">AI recommendation. Build 2 classrooms in Mamelodi, expand 1 school in Soshanguve and recruit 15 additional teachers.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3>6. Data Pipeline Architecture</h3>
+            <div class="pipeline">
+                <div>Data Sources<br><small>Applications and schools</small></div>
+                <span>→</span>
+                <div>API Ingestion<br><small>FastAPI events</small></div>
+                <span>→</span>
+                <div>Data Lake<br><small>AWS S3 or Azure</small></div>
+                <span>→</span>
+                <div>Spark ETL<br><small>Clean and transform</small></div>
+                <span>→</span>
+                <div>Warehouse<br><small>Redshift or Synapse</small></div>
+                <span>→</span>
+                <div>Power BI<br><small>Dashboards</small></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/frontend/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+body { margin:0; font-family:Segoe UI,Arial,sans-serif; background:#f5f7fb; color:#10233f; }
+.sidebar { position:fixed; left:0; top:0; bottom:0; width:240px; background:linear-gradient(#061b36,#020916); color:white; padding:24px; }
+.sidebar h1 { font-size:20px; text-transform:uppercase; margin-bottom:30px; }
+.sidebar a { display:block; padding:13px; border-radius:10px; margin:7px 0; color:#dbe8ff; }
+.sidebar .active { background:linear-gradient(90deg,#f0146d,#ff4f93); }
+.profile { position:absolute; bottom:25px; font-size:14px; }
+.profile span { color:#9fb4d0; font-size:12px; }
+main { margin-left:288px; padding:24px; }
+header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+header h2 { margin:0; font-size:30px; }
+header p { color:#66738a; }
+button { border:1px solid #d9e1ef; background:white; border-radius:9px; padding:12px 18px; font-weight:700; cursor:pointer; }
+.card { background:white; border:1px solid #dbe3f0; border-radius:18px; padding:20px; margin-bottom:18px; box-shadow:0 10px 25px rgba(8,27,54,.05); }
+.card h3 { color:#f0146d; text-transform:uppercase; margin-top:0; }
+.kpis,.mini-kpis { display:grid; grid-template-columns:repeat(7,1fr); gap:12px; margin-bottom:18px; }
+.kpis div,.mini-kpis div,.panel,.class-card,.offer,.pipeline div { border:1px solid #dbe3f0; background:white; border-radius:14px; padding:16px; }
+.kpis span,.mini-kpis span { color:#66738a; font-size:13px; display:block; }
+.kpis strong,.mini-kpis strong { font-size:28px; display:block; margin-top:8px; color:#1769ff; }
+.green { color:#0aa64f!important; } .orange { color:#f28a00!important; } .red { color:#f0143d!important; } .purple { color:#7c3cff!important; }
+.grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:14px; }
+.chart-line { height:200px; border-radius:14px; background:linear-gradient(135deg,rgba(240,20,109,.15),rgba(23,105,255,.10)); position:relative; }
+.chart-line:after { content:""; position:absolute; left:40px; right:40px; top:95px; height:4px; background:#f0146d; transform:rotate(-8deg); border-radius:10px; }
+.panel p { display:flex; justify-content:space-between; border-bottom:1px solid #edf1f7; padding-bottom:10px; }
+.donut { width:160px; height:160px; margin:auto; border-radius:50%; background:conic-gradient(#1769ff 0 32%,#0aa64f 32% 55%,#f28a00 55% 70%,#7c3cff 70%); position:relative; }
+.donut:after { content:""; position:absolute; inset:38px; background:white; border-radius:50%; }
+.split { display:grid; grid-template-columns:1.4fr .9fr; gap:18px; }
+.school-heading { display:flex; justify-content:space-between; align-items:center; background:#071b38; color:white; padding:18px; border-radius:16px; margin-bottom:14px; }
+.school-heading h2,.school-heading p { margin:0; } .school-heading p { color:#b9c9e2; margin-top:5px; }
+.school-heading span { background:#dff7e8; color:#0a873f; padding:8px 14px; border-radius:20px; }
+.classes { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.desk-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin-top:10px; }
+.desk { width:18px; height:18px; border-radius:4px; display:inline-block; position:relative; }
+.desk:after { content:""; position:absolute; left:3px; right:3px; bottom:-4px; height:4px; border-radius:0 0 4px 4px; background:inherit; opacity:.7; }
+.available { background:#3bb44a; } .reserved { background:#ffae1a; } .taken { background:#ff3b4f; } .blocked { background:#9da7b5; }
+.countdown { display:flex; gap:12px; margin:24px 0; }
+.countdown div { flex:1; text-align:center; background:#fff5fa; border:1px solid #ffd0e0; border-radius:12px; padding:15px; }
+.countdown strong { display:block; color:#f0146d; font-size:30px; } .countdown span { font-size:12px; color:#66738a; }
+.accept { width:100%; background:#0aa64f; color:white; border:none; margin-bottom:10px; }
+.decline { width:100%; border-color:#f0146d; color:#f0146d; }
+.map { height:220px; border-radius:14px; background:radial-gradient(circle at 40% 40%,#f0146d 0 20%,transparent 21%),radial-gradient(circle at 60% 55%,#f78fbc 0 25%,transparent 26%),#fff4fa; }
+.recommendation { background:#fff7fb; border:1px solid #ffc9dc; border-radius:14px; padding:16px; }
+.pipeline { display:grid; grid-template-columns:repeat(6,1fr 25px); align-items:center; gap:8px; }
+.pipeline span { font-size:28px; font-weight:800; text-align:center; }
+.pipeline span:last-child { display:none; }
+@media(max-width:1200px){ .sidebar{position:static;width:auto}.profile{position:static;margin-top:20px}main{margin-left:0}.kpis,.mini-kpis,.grid,.split,.classes,.pipeline{grid-template-columns:1fr} }
