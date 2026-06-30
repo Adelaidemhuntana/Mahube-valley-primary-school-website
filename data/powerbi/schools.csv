@@ -1,0 +1,4 @@
+school_id,school_name,district,total_capacity,grade_1_capacity,available_seats,under_offer_seats,taken_seats
+1,Mahlasedi Masana Primary School,Tshwane East,1200,120,17,13,90
+2,Mamelodi Primary School,Tshwane East,950,90,6,10,74
+3,Phomolong Primary School,Tshwane East,800,60,14,5,41
