@@ -15,6 +15,7 @@
       <a href="/#district">District Dashboard</a>
       <a href="/#forecast">AI Forecasting</a>
       <a href="/#pipeline">Data Pipeline</a>
+      <a href="/#quality">Data Quality</a>
       <div class="profile">
         Adelaide Montana<br /><span>Founder and Lead Architect</span>
       </div>
@@ -169,6 +170,54 @@
           <div>Power BI<br /><small>Dashboards</small></div>
         </div>
       </section>
+
+      <section class="card" id="quality">
+    <h3>7. Data Quality Monitor</h3>
+    <p class="section-note">
+        Data Engineering check to make sure school capacity and application records are clean before reports are trusted.
+    </p>
+
+    <div class="quality-status">
+        <div>
+            <span class="label">Overall Status</span>
+            <h2 id="dataQualityStatus">Loading...</h2>
+        </div>
+        <div>
+            <span class="label">Total Schools</span>
+            <h2 id="dataQualitySchools">0</h2>
+        </div>
+        <div>
+            <span class="label">Total Applications</span>
+            <h2 id="dataQualityApplications">0</h2>
+        </div>
+    </div>
+
+    <div class="quality-grid">
+        <div class="quality-check">
+            <span>Missing school names</span>
+            <strong id="missingSchoolNames">0</strong>
+        </div>
+
+        <div class="quality-check">
+            <span>Invalid seat values</span>
+            <strong id="invalidSeatValues">0</strong>
+        </div>
+
+        <div class="quality-check">
+            <span>Capacity mismatch</span>
+            <strong id="capacityMismatch">0</strong>
+        </div>
+
+        <div class="quality-check">
+            <span>Missing parent names</span>
+            <strong id="missingParentNames">0</strong>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p id="dataQualityMessage">Waiting for data quality report...</p>
+    </div>
+</section>
     </main>
 
     <script src="/frontend/js/dashboard.js"></script>

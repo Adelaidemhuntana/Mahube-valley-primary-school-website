@@ -230,3 +230,52 @@ def capacity_summary():
         "unplaced_learners": 243,
         "total_applications": 45128
     }
+
+@app.get("/analytics/data-quality")
+def data_quality_report():
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT COUNT(*) FROM schools")
+    total_schools = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM schools WHERE school_name IS NULL OR school_name = ''")
+    missing_school_names = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM schools WHERE available_seats < 0 OR under_offer_seats < 0 OR taken_seats < 0")
+    invalid_seat_values = cursor.fetchone()[0]
+
+    cursor.execute("""
+        SELECT COUNT(*)
+        FROM schools
+        WHERE available_seats + under_offer_seats + taken_seats != grade_1_capacity
+    """)
+    capacity_mismatch = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM applications")
+    total_applications = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM applications WHERE parent_name IS NULL OR parent_name = ''")
+    missing_parent_names = cursor.fetchone()[0]
+
+    conn.close()
+
+    total_issues = missing_school_names + invalid_seat_values + capacity_mismatch + missing_parent_names
+
+    if total_issues == 0:
+        status = "PASSED"
+    else:
+        status = "NEEDS_REVIEW"
+
+    return {
+        "status": status,
+        "total_schools": total_schools,
+        "total_applications": total_applications,
+        "checks": {
+            "missing_school_names": missing_school_names,
+            "invalid_seat_values": invalid_seat_values,
+            "capacity_mismatch": capacity_mismatch,
+            "missing_parent_names": missing_parent_names
+        },
+        "message": "Data quality checks completed for school capacity and application records."
+    }
