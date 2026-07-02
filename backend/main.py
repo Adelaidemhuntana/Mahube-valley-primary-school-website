@@ -6,6 +6,7 @@ from pydantic import BaseModel
 import sqlite3
 from datetime import datetime, timedelta
 from pathlib import Path
+import json
 
 app = FastAPI(
     title="Smart School Placement Hub",
@@ -278,4 +279,27 @@ def data_quality_report():
             "missing_parent_names": missing_parent_names
         },
         "message": "Data quality checks completed for school capacity and application records."
+    }
+
+@app.get("/cloud/data-lake")
+def cloud_data_lake_status():
+    manifest_path = Path("cloud_data_lake") / "manifest.json"
+
+    if not manifest_path.exists():
+        return {
+            "status": "NOT_CREATED",
+            "message": "Run python etl/export_cloud_data_lake.py to create the cloud data lake export."
+        }
+
+    with open(manifest_path, "r", encoding="utf-8") as file:
+        manifest = json.load(file)
+
+    return {
+        "status": "READY",
+        "project": manifest["project"],
+        "local_data_lake_path": manifest["local_data_lake_path"],
+        "aws_s3_bucket": manifest["aws_s3_bucket"],
+        "raw_files": manifest["raw_files"],
+        "processed_files": manifest["processed_files"],
+        "message": manifest["message"]
     }

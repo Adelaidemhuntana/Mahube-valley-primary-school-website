@@ -1,0 +1,29 @@
+{
+    "project": "Smart School Placement Hub",
+    "data_lake_status": "CREATED",
+    "local_data_lake_path": "C:\\Users\\cc gift acres\\Desktop\\Adelaide Mhuntana\\my codes\\web projects\\Mahube-valley-primary-school-website\\cloud_data_lake",
+    "aws_s3_bucket": "smart-school-placement-hub-adelaide-2026",
+    "zones": {
+        "raw": [
+            "raw/schools",
+            "raw/applications",
+            "raw/offers"
+        ],
+        "processed": [
+            "processed/powerbi"
+        ]
+    },
+    "raw_files": [
+        "raw\\schools\\schools.jsonl",
+        "raw\\applications\\applications.jsonl",
+        "raw\\offers\\offers.jsonl"
+    ],
+    "processed_files": [
+        "processed\\powerbi\\applications.csv",
+        "processed\\powerbi\\district_summary.csv",
+        "processed\\powerbi\\offers.csv",
+        "processed\\powerbi\\schools.csv",
+        "processed\\powerbi\\seat_status_summary.csv"
+    ],
+    "message": "Cloud ready data lake export created successfully."
+}

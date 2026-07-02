@@ -120,3 +120,60 @@ async function loadDataQualityReport() {
 }
 
 loadDataQualityReport();
+
+async function loadCloudDataLakeStatus() {
+  try {
+    const response = await fetch("/cloud/data-lake");
+    const data = await response.json();
+
+    document.getElementById("cloudLakeStatus").textContent = data.status;
+    document.getElementById("cloudLakeBucket").textContent = data.aws_s3_bucket;
+    document.getElementById("cloudLakeRawCount").textContent =
+      data.raw_files.length;
+    document.getElementById("cloudLakeProcessedCount").textContent =
+      data.processed_files.length;
+    document.getElementById("cloudLakeMessage").textContent = data.message;
+  } catch (error) {
+    document.getElementById("cloudLakeStatus").textContent = "ERROR";
+    document.getElementById("cloudLakeMessage").textContent =
+      "Could not load cloud data lake status.";
+  }
+}
+
+loadCloudDataLakeStatus();
+
+async function loadCloudDataLakeStatus() {
+  const statusElement = document.getElementById("cloudLakeStatus");
+  const bucketElement = document.getElementById("cloudLakeBucket");
+  const rawCountElement = document.getElementById("cloudLakeRawCount");
+  const processedCountElement = document.getElementById(
+    "cloudLakeProcessedCount",
+  );
+  const messageElement = document.getElementById("cloudLakeMessage");
+
+  if (
+    !statusElement ||
+    !bucketElement ||
+    !rawCountElement ||
+    !processedCountElement ||
+    !messageElement
+  ) {
+    return;
+  }
+
+  try {
+    const response = await fetch("/cloud/data-lake");
+    const data = await response.json();
+
+    statusElement.textContent = data.status;
+    bucketElement.textContent = data.aws_s3_bucket;
+    rawCountElement.textContent = data.raw_files.length;
+    processedCountElement.textContent = data.processed_files.length;
+    messageElement.textContent = data.message;
+  } catch (error) {
+    statusElement.textContent = "ERROR";
+    messageElement.textContent = "Could not load cloud data lake status.";
+  }
+}
+
+loadCloudDataLakeStatus();

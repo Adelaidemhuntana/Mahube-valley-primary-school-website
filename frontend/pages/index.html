@@ -16,6 +16,7 @@
       <a href="/#forecast">AI Forecasting</a>
       <a href="/#pipeline">Data Pipeline</a>
       <a href="/#quality">Data Quality</a>
+      <a href="/#cloud-lake">Cloud Data Lake</a>
       <div class="profile">
         Adelaide Montana<br /><span>Founder and Lead Architect</span>
       </div>
@@ -216,6 +217,51 @@
 
     <div class="info-box">
         <p id="dataQualityMessage">Waiting for data quality report...</p>
+    </div>
+</section>
+
+<section class="card" id="cloud-lake">
+    <h3>8. Cloud Data Lake on Amazon S3</h3>
+    <p class="section-note">
+        This section shows the cloud data lake export used to move raw and processed school placement data into Amazon S3.
+    </p>
+
+    <div class="quality-status">
+        <div>
+            <span class="label">Cloud Status</span>
+            <h2 id="cloudLakeStatus">Loading...</h2>
+        </div>
+
+        <div>
+            <span class="label">S3 Bucket</span>
+            <h2 id="cloudLakeBucket">Loading...</h2>
+        </div>
+
+        <div>
+            <span class="label">Raw Files</span>
+            <h2 id="cloudLakeRawCount">0</h2>
+        </div>
+
+        <div>
+            <span class="label">Processed Files</span>
+            <h2 id="cloudLakeProcessedCount">0</h2>
+        </div>
+    </div>
+
+    <div class="pipeline">
+        <div>SQLite Database<br><small>Schools, applications and offers</small></div>
+        <span>→</span>
+        <div>Raw Zone<br><small>JSONL files</small></div>
+        <span>→</span>
+        <div>Processed Zone<br><small>Power BI CSV files</small></div>
+        <span>→</span>
+        <div>Amazon S3<br><small>Cloud data lake bucket</small></div>
+        <span>→</span>
+        <div>Future AWS Glue<br><small>Cloud ETL processing</small></div>
+    </div>
+
+    <div class="info-box">
+        <p id="cloudLakeMessage">Waiting for cloud data lake status...</p>
     </div>
 </section>
     </main>
